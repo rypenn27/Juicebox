@@ -1,3 +1,4 @@
+// api/utils.js
 function requireUser(req, res, next) {
   if (!req.user) {
     next({
@@ -5,10 +6,10 @@ function requireUser(req, res, next) {
       message: "You must be logged in to perform this action",
     });
   }
+
   next();
 }
+
 module.exports = {
   requireUser,
 };
-
-someRouter.post("/some/route", requireUser, async (req, res, next) => {});
